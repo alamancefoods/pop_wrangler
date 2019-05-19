@@ -6,6 +6,12 @@ authors = ["MTempleman <huntertempleman@gmail.com>"]
 
 [tool.poetry.dependencies]
 python = "^3.7"
+pandas = "^0.24.2"
+numpy = "^1.16"
+xlrd = "^1.2"
+natsort = "^6.0"
+openpyxl = "^2.6"
+XlsxWriter = "^1.1"
 
 [tool.poetry.dev-dependencies]
 pytest = "^3.0"
