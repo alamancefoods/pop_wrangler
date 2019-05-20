@@ -9,6 +9,10 @@ def main():
             data.truss()
             data.wrangle()
             data.print_to_file()
+        elif sys.argv[1] == 'dry_run':
+            data = PaWrangler(sys.argv[2])
+            data.truss()
+            data.wrangle()
         else:
             print("You ask too much of me!")
     except Exception as e:
