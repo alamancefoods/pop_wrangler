@@ -26,9 +26,12 @@ And that's it, she can go on about her day!
 You will need a GitHub account and permissions for the Alamance group account in order to create issues.
 While I encourage people to do this, creating a task in the Drive folder and sending an email to the developer
 will suffice.
-[tasks folder](https://drive.google.com/drive/folders/1Wsm86akAVAFj2bzu1BIY-XKTR1vZrNtE)
-[Creating a GitHub Account](https://help.github.com/en/articles/signing-up-for-a-new-github-account)
-[Creating an Issue in Github](https://help.github.com/en/articles/creating-an-issue)
+
+* [tasks folder](https://drive.google.com/drive/folders/1Wsm86akAVAFj2bzu1BIY-XKTR1vZrNtE)
+
+* [Creating a GitHub Account](https://help.github.com/en/articles/signing-up-for-a-new-github-account)
+
+* [Creating an Issue in Github](https://help.github.com/en/articles/creating-an-issue)
 
 
 
