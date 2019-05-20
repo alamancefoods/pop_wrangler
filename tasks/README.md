@@ -13,6 +13,10 @@ up, the process is pretty much the same as in the example below with GitHub and 
 tasks folder that is in the project which means you can do everything within Git on your desktop instead of having to deal 
 with Google Drive. 
 
+#### Links:
+* [Download Link](https://desktop.github.com/)
+* [Instructions](https://help.github.com/en/desktop/getting-started-with-github-desktop)
+
 
 ## GitHub + Google Drive Instructions:
 #### Example:
@@ -22,15 +26,13 @@ and creates a subfolder in the tasks folder. She then uploads her excel file int
 explaining the format of data she wants. She creates an issue for the task on GitHub and assigns it to a developer. 
 And that's it, she can go on about her day!
 
-#### Link:
+#### Links:
 You will need a GitHub account and permissions for the Alamance group account in order to create issues.
 While I encourage people to do this, creating a task in the Drive folder and sending an email to the developer
 will suffice.
 
-* [tasks folder](https://drive.google.com/drive/folders/1Wsm86akAVAFj2bzu1BIY-XKTR1vZrNtE)
-
+* [Tasks Folder](https://drive.google.com/drive/folders/1Wsm86akAVAFj2bzu1BIY-XKTR1vZrNtE)
 * [Creating a GitHub Account](https://help.github.com/en/articles/signing-up-for-a-new-github-account)
-
 * [Creating an Issue in Github](https://help.github.com/en/articles/creating-an-issue)
 
 
