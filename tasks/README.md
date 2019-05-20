@@ -1,7 +1,6 @@
 # Task Folder:
 ###### This folder is, as one might assume, for laying out parsing tasks.
 
-## GitHub Instructions:
 ### Create a Task:
 To create a task, you create a folder! Or rather, you create a subfolder within the Tasks 
 folder to contain the excel file you want modified and an accompanying text file describing what the output should look like.
