@@ -1,16 +1,22 @@
-from analytics.pa_parser import PaWrangler
+from analytics.pa_parser import PaWrangler as paW
+from analytics.pb_parser import PaWrangler as pbW
 import time
 import sys
 
 def main():
     try:
         if sys.argv[1] == 'pa_neg':
-            data = PaWrangler(sys.argv[2])
+            data = paW(sys.argv[2])
+            data.truss()
+            data.wrangle()
+            data.print_to_file()
+        elif sys.argv[1] == 'pb_neg':
+            data = pbW(sys.argv[2])
             data.truss()
             data.wrangle()
             data.print_to_file()
         elif sys.argv[1] == 'dry_run':
-            data = PaWrangler(sys.argv[2])
+            data = paW(sys.argv[2])
             data.truss()
             data.wrangle()
         else:
