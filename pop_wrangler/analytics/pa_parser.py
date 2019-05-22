@@ -10,6 +10,7 @@ class PaWrangler:
         self.quant = pd.DataFrame()
         self.bal = pd.DataFrame()
         self.pdate = pd.DataFrame()
+        self.qoh = 0
         self.quant_state = ''
         self.is_half_bin = False
         self.full_bin = {'A': {}, 'P': {}, 'H': {}, 'W': {}, 'L': {}}
