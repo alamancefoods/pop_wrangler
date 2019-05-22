@@ -1,20 +1,4 @@
-import sys, traceback
-import xlsxwriter
-import datetime
-from datetime import date
-import pandas as pd
-from natsort import natsorted
-
-class PaWrangler:
-
-    def __init__(self, file):
-        self.f = file
-        self.quant = pd.DataFrame()
-        self.bal = pd.DataFrame()
-        self.pdate = pd.DataFrame()
-        self.sdate = pd.DataFrame()
-        self.quant_state = ''
-        self.median_date = None
+= None
         self.is_half_bin = False
         self.full_bin = {'A': {}, 'P': {}, 'H': {}, 'W': {}, 'L': {}}
         self.half_bin = {'A': {}, 'P': {}, 'H': {}, 'W': {}, 'L': {}}
@@ -86,7 +70,7 @@ class PaWrangler:
             try:
                 dfh.to_excel(writer, sheet_name= sheet_names[key], startrow= 1, startcol= 7)
                 worksheet = workbook.get_worksheet_by_name(sheet_names[key])
-                worksheet.write(0, 6, 'Half Bin', cell_format)
+                worksheet.write(0, 7, 'Half Bin', cell_format)
             except:
                 pass
 
@@ -95,9 +79,11 @@ class PaWrangler:
             worksheet.set_column(1, 1, 0, 0, {'hidden': True})
             worksheet.set_column(3, 3, 15, 0)
             worksheet.set_column(4, 4, 15, 0)
+            worksheet.set_column(5, 5, 15, 0)
             worksheet.set_column(8, 8, 0, 0, {'hidden': True})
             worksheet.set_column(10, 10, 15, 0)
             worksheet.set_column(11, 11, 15, 0)
+            worksheet.set_column(12, 12, 15, 0)
         writer.save()
 
 
@@ -173,10 +159,14 @@ class PaWrangler:
         for i in range(len(df_key_list)):
             tmp_df = pd.DataFrame.from_dict(df_dict[df_key][df_key_list[i]])
             tmp_df.sort_values(by=[2], inplace=True)
+            tmp_df[3] = np.nan
+            tmp_df.columns = ['A', 'B', 'C', 'D']
+            tmp_sum= tmp_df['A'].sum()
+            tmp_df.iat[0, 3] = tmp_sum
             concat_list.append(tmp_df)
         try:
             fin_df = pd.concat(concat_list, keys= df_key_list)
-            fin_df.columns = ['deficit', 'pick date', 'ship date']
+            fin_df.columns = ['deficit', 'pick date', 'ship date', 'TOTAL DEFICIT']
             return fin_df
         except:
             pass

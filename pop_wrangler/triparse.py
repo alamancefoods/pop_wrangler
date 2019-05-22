@@ -1,24 +1,18 @@
-from analytics.pa_parser import PaWrangler as paW
-from analytics.pc_parser import PaWrangler as pcW
+from analytics.pc_parser import PaWrangler as paW
+from analytics.pa_scraper import PaScraper as paS
 import time
 import sys, traceback
 
 def main():
     try:
-        if sys.argv[1] == 'pa_neg':
+        if sys.argv[1] == 'wrangle':
             data = paW(sys.argv[2])
             data.truss()
             data.wrangle()
             data.print_to_file()
-        elif sys.argv[1] == 'pc_neg':
-            data = pcW(sys.argv[2])
-            data.truss()
-            data.wrangle()
-            data.print_to_file()
-        elif sys.argv[1] == 'dry_run':
-            data = paW(sys.argv[2])
-            data.truss()
-            data.wrangle()
+        elif sys.argv[1] == 'scrape':
+            master = paS(sys.argv[2])
+            master.print_current_frames()
         else:
             print("You ask too much of me!")
     except Exception as e:
