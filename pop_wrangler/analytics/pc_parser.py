@@ -1,4 +1,21 @@
-= None
+import sys, traceback
+import numpy as np
+import xlsxwriter
+import datetime
+from datetime import date
+import pandas as pd
+from natsort import natsorted
+
+class PaWrangler:
+
+    def __init__(self, file):
+        self.f = file
+        self.quant = pd.DataFrame()
+        self.bal = pd.DataFrame()
+        self.pdate = pd.DataFrame()
+        self.sdate = pd.DataFrame()
+        self.quant_state = ''
+        self.median_date = None
         self.is_half_bin = False
         self.full_bin = {'A': {}, 'P': {}, 'H': {}, 'W': {}, 'L': {}}
         self.half_bin = {'A': {}, 'P': {}, 'H': {}, 'W': {}, 'L': {}}

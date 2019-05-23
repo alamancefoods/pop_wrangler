@@ -12,7 +12,7 @@ def main():
             data.print_to_file()
         elif sys.argv[1] == 'scrape':
             master = paS(sys.argv[2])
-            master.print_current_frames()
+            master.write_to_excel()
         else:
             print("You ask too much of me!")
     except Exception as e:
