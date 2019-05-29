@@ -2,7 +2,7 @@ import sys, traceback
 import numpy as np
 import xlsxwriter
 import datetime
-from datetime import date
+from datetime import date, datetime, timedelta
 import pandas as pd
 from natsort import natsorted
 
@@ -14,6 +14,7 @@ class PaWrangler:
         self.bal = pd.DataFrame()
         self.pdate = pd.DataFrame()
         self.sdate = pd.DataFrame()
+        self.padate = None
         self.quant_state = ''
         self.median_date = None
         self.is_half_bin = False
@@ -23,6 +24,7 @@ class PaWrangler:
     # Accepts a file and builds a sensible dataframe:
     def truss(self):
         df = pd.read_excel(self.f, sheet_name='Sheet1', usecols= "A,C,D,E")
+        self.padate = list(df.columns)[1]
         new_header = df.iloc[0]
         df = df[1:]
         df.columns= new_header
@@ -52,7 +54,7 @@ class PaWrangler:
     _format_df method.
     """
     def print_to_file(self):
-        to_date = datetime.datetime.now().strftime("%b-%d-%Y")
+        to_date = self.padate.strftime("%b-%d-%Y")
         doc_title = "PA_Negatives_" + to_date + ".xlsx"
         fullbin_key_lists = self._natural_sorter(self.full_bin)
         halfbin_key_lists = self._natural_sorter(self.half_bin)
@@ -173,14 +175,19 @@ class PaWrangler:
     """
     def _format_df(self, df_dict, df_key, df_key_list):
         concat_list = []
+        outer_date = self.padate + timedelta(days = 10)
         for i in range(len(df_key_list)):
             tmp_df = pd.DataFrame.from_dict(df_dict[df_key][df_key_list[i]])
             tmp_df.sort_values(by=[2], inplace=True)
             tmp_df[3] = np.nan
             tmp_df.columns = ['A', 'B', 'C', 'D']
-            tmp_sum= tmp_df['A'].sum()
-            tmp_df.iat[0, 3] = tmp_sum
-            concat_list.append(tmp_df)
+            try:
+                new_df = tmp_df[tmp_df['C'] < outer_date]
+                new_sum= new_df['A'].sum()
+                new_df.iat[0, 3] = new_sum
+                concat_list.append(new_df)
+            except:
+                pass
         try:
             fin_df = pd.concat(concat_list, keys= df_key_list)
             fin_df.columns = ['deficit', 'pick date', 'ship date', 'TOTAL DEFICIT']
