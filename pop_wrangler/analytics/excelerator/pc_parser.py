@@ -8,8 +8,9 @@ from natsort import natsorted
 
 class PaWrangler:
 
-    def __init__(self, file, day_count):
+    def __init__(self, file, day_count = 30, path = ''):
         self.f = file
+        self.path = path
         self.day_count = day_count
         self.quant = pd.DataFrame()
         self.bal = pd.DataFrame()
@@ -58,11 +59,12 @@ class PaWrangler:
     def print_to_file(self):
         to_date = self.padate.strftime("%b-%d-%Y")
         doc_title = f'{self.day_count}_day_PA_Deficits_{to_date}.xlsx'
+        dst = self.path + doc_title
         fullbin_key_lists = self._natural_sorter(self.full_bin)
         halfbin_key_lists = self._natural_sorter(self.half_bin)
 
         writer = pd.ExcelWriter(
-            doc_title,
+            dst,
             engine= 'xlsxwriter',
             date_format= 'mmmm dd yyyy',
             datetime_format= 'mmmm dd yyyy'
@@ -115,6 +117,7 @@ class PaWrangler:
             worksheet.set_column(15, 15, 15, 0)
             worksheet.set_column(16, 16, 15, 0)
         writer.save()
+        return dst
 
 
     # Determine item state.
