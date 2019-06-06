@@ -1,0 +1,39 @@
+* PunchCard:
+#+BEGIN: clocktable :scope subtree :maxlevel 2
+#+CAPTION: Clock summary at [2019-06-04 Tue 14:59]
+| Headline     | Time   |      |
+|--------------+--------+------|
+| *Total time* | *4:35* |      |
+|--------------+--------+------|
+| PunchCard:   | 4:35   |      |
+| \_  Tasks    |        | 4:35 |
+#+END:
+
+** Tasks 
+*** Build web app for Garrick. 
+**** TODO Build out basic flask file handler.
+**** TODO React sends file to Flask.
+     :LOGBOOK:
+     CLOCK: [2019-06-04 Tue 14:58]--[2019-06-04 Tue 15:23] =>  0:25
+     CLOCK: [2019-06-04 Tue 14:19]--[2019-06-04 Tue 14:44] =>  0:25
+     CLOCK: [2019-06-04 Tue 13:48]--[2019-06-04 Tue 14:13] =>  0:25
+     CLOCK: [2019-06-04 Tue 12:49]--[2019-06-04 Tue 13:14] =>  0:25
+     CLOCK: [2019-06-04 Tue 12:01]--[2019-06-04 Tue 12:26] =>  0:25
+     CLOCK: [2019-06-04 Tue 11:31]--[2019-06-04 Tue 11:56] =>  0:25
+     CLOCK: [2019-06-04 Tue 10:58]--[2019-06-04 Tue 11:23] =>  0:25
+     CLOCK: [2019-06-04 Tue 10:20]--[2019-06-04 Tue 10:45] =>  0:25
+     CLOCK: [2019-06-04 Tue 09:40]--[2019-06-04 Tue 10:05] =>  0:25
+     CLOCK: [2019-06-04 Tue 09:09]--[2019-06-04 Tue 09:34] =>  0:25
+     CLOCK: [2019-06-04 Tue 08:38]--[2019-06-04 Tue 09:03] =>  0:25
+     CLOCK: [2019-06-04 Tue 08:05]--[2019-06-04 Tue 08:30] =>  0:25
+     :END:
+**** TODO Flask prints the file name to the console. 
+**** TODO Flask places the file in a directory. 
+**** TODO Flask deletes the file from the directory.
+**** TODO Flask processes the file using the parser.
+**** TODO Flask sends the processed file to React.
+**** TODO React accepts the new file for the user to download.
+**** TODO The user downloads the file.
+     
+
+    

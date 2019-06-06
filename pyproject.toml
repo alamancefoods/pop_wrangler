@@ -12,6 +12,10 @@ xlrd = "^1.2"
 natsort = "^6.0"
 openpyxl = "^2.6"
 XlsxWriter = "^1.1"
+plotly = "^3.9"
+flask = "^1.0"
+flask-cors = "^3.0"
+python-dotenv = "^0.10.3"
 
 [tool.poetry.dev-dependencies]
 pytest = "^3.0"
