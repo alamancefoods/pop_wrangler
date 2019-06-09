@@ -117,7 +117,7 @@ class PaWrangler:
             worksheet.set_column(15, 15, 15, 0)
             worksheet.set_column(16, 16, 15, 0)
         writer.save()
-        return dst
+        return doc_title
 
 
     # Determine item state.

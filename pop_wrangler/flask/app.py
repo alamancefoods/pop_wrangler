@@ -1,4 +1,4 @@
-from ..analytics.excelerator.pc_parser import PaWrangler as paW
+from ..analytics.excelerator.pc_parser import PaWrangler as wrangler
 import sys, traceback, logging, glob, os, tempfile
 from pathlib import Path
 from flask_cors import CORS
@@ -24,21 +24,39 @@ def allowed_file(filename):
 # Routes
 @app.route('/pa-deficits', methods=['POST'])
 def upload_file():
+
     if request.method == 'POST':
         # First, save the file to a tmpfiles directory.
         file = request.files['file']
         file_dst = str(TMP_FILES / file.filename)
         file.save(file_dst)
 
-        # Next, process the file with PaWrangler
-        data = paW(file_dst, path= str(PA_DEFICITS) + "/")
+
+        # Gather the forecast time deltas, provided they were passed.
+        delta_list = []
+        if(request.args.getlist('delta')):
+            deltas = request.args.getlist('delta')
+            for delta in deltas:
+                delta_list.append(delta)
+
+        # Next, process the file with PaWrangler and print to 'files/pa_deficits/'
+        # The outputted excel file's name will be returned by the print_to_file method.
+        file_names = []
+        data = wrangler(file_dst, path= str(PA_DEFICITS) + "/")
         data.truss()
         data.wrangle()
-        poop = data.print_to_file()
-        print(poop)
+        if not len(delta_list):
+            file_name = data.print_to_file()
+            file_names.append(file_name)
+        else:
+            for delta in delta_list:
+                data.day_count = delta
+                file_name = data.print_to_file()
+                file_names.append(file_name)
+
 
         # Next, retrieve the saved file and parse it with paWrangler.
-        name_dict = {'name' : file.filename}
+        name_dict = {'names' : file_names}
         return jsonify(name_dict)
     else:
         return('hello hunter.')
@@ -46,4 +64,4 @@ def upload_file():
 @app.route('/pa-deficits/<filename>', methods=['GET'])
 def download_file(filename):
     if request.method == 'GET':
-        return send_file(str(new_path / 'tmpdir' / filename), attachment_filename= filename)
+        return send_file(str(PA_DEFICITS / filename), attachment_filename= filename)

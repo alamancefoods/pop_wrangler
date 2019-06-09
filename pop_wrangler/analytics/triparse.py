@@ -6,7 +6,7 @@ import sys, traceback
 def main():
     try:
         if sys.argv[1] == 'wrangle':
-            data = paW(sys.argv[2], sys.argv[3])
+            data = paW(sys.argv[2], day_count = sys.argv[3])
             data.truss()
             data.wrangle()
             data.print_to_file()
