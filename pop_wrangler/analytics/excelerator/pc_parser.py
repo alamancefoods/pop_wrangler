@@ -192,13 +192,17 @@ class PaWrangler:
         formatted_key_list = []
         outer_date = self.padate + timedelta(days = int(self.day_count))
         for i in range(len(df_key_list)):
-            tmp_df = pd.DataFrame.from_dict(df_dict[df_key][df_key_list[i]])
-            tmp_df.sort_values(by=[2], inplace=True)
-            tmp_df[3] = np.nan
-            tmp_df.columns = ['A', 'B', 'C', 'D']
+            unsorted_df = pd.DataFrame.from_dict(df_dict[df_key][df_key_list[i]])
+            no_null_pdate_df = unsorted_df.dropna(subset=[1])
+            null_pdate_df = unsorted_df.loc[unsorted_df[1].isna()]
+            no_null_pdate_df = no_null_pdate_df.sort_values(by=[1])
+            null_pdate_df = null_pdate_df.sort_values(by=[2])
+            sorted_df = pd.concat([no_null_pdate_df, null_pdate_df]).reset_index(drop=True)
+            sorted_df[3] = np.nan
+            sorted_df.columns = ['deficit', 'p_date', 's_date', 'total']
             try:
-                new_df = tmp_df[tmp_df['C'] <= outer_date]
-                new_sum= new_df['A'].sum()
+                new_df = sorted_df[sorted_df['s_date'] <= outer_date]
+                new_sum= new_df['deficit'].sum()
                 new_df.iat[0, 3] = new_sum
                 concat_list.append(new_df)
                 formatted_key_list.append(df_key_list[i])
