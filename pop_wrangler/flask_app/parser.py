@@ -1,8 +1,7 @@
 from ..analytics.excelerator.pc_parser import PaWrangler as wrangler
 import sys, traceback, logging, glob, os, tempfile
 from pathlib import Path
-from flask_cors import CORS
-from flask import Flask, Blueprint, flash, request, redirect, url_for, send_file, jsonify
+from flask import  Blueprint, request, send_file, jsonify, after_this_request
 from werkzeug.utils import secure_filename
 
 # App Constants
@@ -21,6 +20,7 @@ def allowed_file(filename):
         filename.rsplit('.', 1)[1].lower() in ALLOWED_EXTENSIONS
 
 # Routes
+# Route For Creating PA Deficit Reports From Uploaded Excel Files
 @bp.route('/pa-deficits', methods=['POST'])
 def upload_file():
 
@@ -60,7 +60,16 @@ def upload_file():
     else:
         return('hello hunter.')
 
+# Route For Downloading File Created By the upload_file Definition
 @bp.route('/pa-deficits/<filename>', methods=['GET'])
 def download_file(filename):
+    file_path = str(PA_DEFICITS / filename)
     if request.method == 'GET':
-        return send_file(str(PA_DEFICITS / filename), attachment_filename= filename)
+        @after_this_request
+        def delete_file(response):
+            try:
+                os.remove(file_path)
+            except Exception as error:
+                pass
+            return response
+        return send_file(file_path, attachment_filename= filename)
