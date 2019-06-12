@@ -213,7 +213,6 @@ class PaWrangler:
         try:
             fin_df = pd.concat(concat_list, keys= formatted_key_list)
             fin_df.columns = ['deficit', 'pick date', 'ship date', 'TOTAL DEFICIT']
-            if(df_key_list[i - 1][0] == 'P'):
             return fin_df
         except:
             pass
