@@ -3,6 +3,7 @@ import numpy as np
 import xlsxwriter
 import datetime
 from datetime import date, datetime, timedelta
+from pytz import timezone
 import pandas as pd
 from natsort import natsorted
 
@@ -58,7 +59,9 @@ class PaWrangler:
     _format_df method.
     """
     def print_to_file(self):
-        timestamp = datetime.now().strftime("%I:%M-%p")
+        eastern = timezone('US/Eastern')
+        local_dt = eastern.localize(datetime.now())
+        timestamp = local_dt.strftime("%I:%M-%p")
         to_date = self.padate.strftime("%b-%d-%Y")
         doc_title = f'{self.day_count}_day_PA_Deficits_{to_date}:{timestamp}.xlsx'
         dst = self.path + doc_title
