@@ -1,5 +1,6 @@
 from excelerator.pc_parser import PaWrangler as paW
 from excelerator.pa_scraper import PaScraper as paS
+from excelerator.file_cleaner import FileCleaner as fC
 import time
 import sys, traceback
 
@@ -13,6 +14,9 @@ def main():
         elif sys.argv[1] == 'scrape':
             master = paS(sys.argv[2])
             master.write_to_excel()
+        elif sys.argv[1] == 'clean':
+            dataframe = fC(sys.argv[2])
+            dataframe.clean()
         else:
             print("You ask too much of me!")
     except Exception as e:
