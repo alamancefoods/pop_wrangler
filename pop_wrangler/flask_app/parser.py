@@ -1,6 +1,7 @@
 from ..analytics.excelerator.pc_parser import PaWrangler as wrangler
 import sys, traceback, logging, glob, os, tempfile
 from pathlib import Path
+import time
 from flask import  Blueprint, request, send_file, jsonify, after_this_request
 from werkzeug.utils import secure_filename
 
@@ -19,6 +20,9 @@ def allowed_file(filename):
     return '.' in filename and \
         filename.rsplit('.', 1)[1].lower() in ALLOWED_EXTENSIONS
 
+@bp.route('/login', methods=['GET'])
+def user_login():
+    return('Welcome!')
 # Routes
 # Route For Creating PA Deficit Reports From Uploaded Excel Files
 @bp.route('/pa-deficits', methods=['POST'])
@@ -48,6 +52,7 @@ def upload_file():
             file_name = data.print_to_file()
             file_names.append(file_name)
         else:
+            delta_list = sorted(delta_list, reverse=True)
             for delta in delta_list:
                 data.day_count = delta
                 file_name = data.print_to_file()

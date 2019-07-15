@@ -1,0 +1,138 @@
+Hours Worked: Hunter Templeman
+
+Monday, 13. May: 
+    08:30:00 -- 12:30:00
+    13:00:00 -- 17:00:00
+    DAILY TOTAL: 8.0 HOURS
+
+Tuesday, 14. May: 
+    08:30:00 -- 12:00:00
+    12:30:00 -- 16:00:00
+    16:30:00 -- 19:00:00
+    DAILY TOTAL: 9.5 HOURS
+
+Wednesday, 15. May: 
+    08:30:00 -- 11:00:00
+    12:00:00 -- 15:00:00
+    16:00:00 -- 20:00:00
+    DAILY TOTAL: 9.5 HOURS
+
+Thursday, 16. May: 
+    11:00:00 -- 14:00:00
+    DAILY TOTAL: 3.0 HOURS
+
+Friday, 17. May: 
+    10:00:00 -- 13:00:00
+    15:30:00 -- 21:30:00
+    DAILY TOTAL: 9.0 HOURS
+
+Sunday, 19. May: 
+    09:00:00 -- 13:00:00
+    13:30:00 -- 16:30:00
+    17:00:00 -- 19:00:00
+    DAILY TOTAL: 9.0 HOURS
+
+Monday, 20. May: 
+    08:30:00 -- 12:30:00
+    13:00:00 -- 17:00:00
+    DAILY TOTAL: 8.0 HOURS
+
+Tuesday, 21. May: 
+    08:30:00 -- 12:00:00
+    12:30:00 -- 16:30:00
+    17:30:00 -- 21:00:00
+    DAILY TOTAL: 11.0 HOURS
+
+Wednesday, 22. May: 
+    08:30:00 -- 12:30:00
+    13:30:00 -- 17:30:00
+    19:30:00 -- 21:30:00
+    DAILY TOTAL: 10.0 HOURS
+
+Thursday, 23. May: 
+    10:00:00 -- 12:00:00
+    DAILY TOTAL: 2.0 HOURS
+
+Friday, 24. May: 
+    09:00:00 -- 13:00:00
+    13:30:00 -- 17:30:00
+    18:00:00 -- 20:00:00
+    DAILY TOTAL: 10.0 HOURS
+
+Sunday, 26. May: 
+    10:00:00 -- 12:00:00
+    13:00:00 -- 17:00:00
+    18:00:00 -- 21:00:00
+    DAILY TOTAL: 9.0 HOURS
+
+Monday, 27. May: 
+    08:30:00 -- 12:30:00
+    13:00:00 -- 17:00:00
+    DAILY TOTAL: 8.0 HOURS
+
+Tuesday, 28. May: 
+    08:30:00 -- 12:30:00
+    13:00:00 -- 17:00:00
+    17:30:00 -- 19:30:00
+    DAILY TOTAL: 10.0 HOURS
+
+Wednesday, 29. May: 
+    08:30:00 -- 11:00:00
+    12:00:00 -- 16:00:00
+    16:30:00 -- 19:30:00
+    DAILY TOTAL: 9.5 HOURS
+
+Friday, 31. May: 
+    10:00:00 -- 14:00:00
+    14:30:00 -- 16:30:00
+    DAILY TOTAL: 6.0 HOURS
+
+Sunday, 02. June: 
+    10:00:00 -- 13:00:00
+    13:30:00 -- 17:30:00
+    18:00:00 -- 20:30:00
+    DAILY TOTAL: 9.5 HOURS
+
+Monday, 03. June: 
+    08:30:00 -- 12:00:00
+    12:30:00 -- 17:00:00
+    DAILY TOTAL: 8.0 HOURS
+
+Tuesday, 04. June: 
+    08:30:00 -- 12:30:00
+    13:00:00 -- 17:00:00
+    18:00:00 -- 23:30:00
+    DAILY TOTAL: 13.5 HOURS
+
+Wednesday, 05. June: 
+    08:30:00 -- 12:30:00
+    13:30:00 -- 17:30:00
+    DAILY TOTAL: 8.0 HOURS
+
+Friday, 07. June: 
+    09:30:00 -- 11:30:00
+    14:00:00 -- 17:00:00
+    DAILY TOTAL: 5.0 HOURS
+
+Sunday, 09. June: 
+    09:00:00 -- 13:00:00
+    14:00:00 -- 18:00:00
+    19:00:00 -- 21:00:00
+    DAILY TOTAL: 10.0 HOURS
+
+Monday, 10. June: 
+    08:00:00 -- 12:00:00
+    13:00:00 -- 17:00:00
+    DAILY TOTAL: 8.0 HOURS
+
+Tuesday, 11. June: 
+    08:30:00 -- 12:00:00
+    12:15:00 -- 15:00:00
+    DAILY TOTAL: 6.25 HOURS
+
+Wednesday, 12. June: 
+    08:30:00 -- 12:00:00
+    12:30:00 -- 18:30:00
+    22:00:00 -- 23:30:00
+    DAILY TOTAL: 11.0 HOURS
+

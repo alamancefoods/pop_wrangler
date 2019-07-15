@@ -26,5 +26,6 @@ def create_app(test_config=None):
     app.register_blueprint(parser.bp)
     app.add_url_rule('/pa-deficits', endpoint='upload_file')
     app.add_url_rule('/pa-deficits/<filename>', endpoint='download_file')
+    app.add_url_rule('/login', endpoint='user_login')
 
     return app
