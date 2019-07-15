@@ -189,7 +189,7 @@ class PaWrangler:
     """
     def calculate_deficit(self, order_quantity):
         quantity_diff = self.qoh_state - order_quantity
-        if(self.qoh_state > 0 and quantity_diff < 0):
+        if(self.qoh_state >= 0 and quantity_diff <= 0):
             self.qoh_state = quantity_diff
             return -quantity_diff
         elif(self.qoh_state < 0):
@@ -223,7 +223,6 @@ class PaWrangler:
                 self.qoh_state = df_dict[df_key][df_key_list[i]]['quantity_on_hand']
                 unsorted_df = pd.DataFrame.from_dict(df_dict[df_key][df_key_list[i]]['balance_list'])
                 unsorted_df.columns = ['order_quantity', 'p_date', 's_date']
-
                 """
                 Split dataframes by pick-date and ship-date. Dropping any values not within the desired range.
                 """
