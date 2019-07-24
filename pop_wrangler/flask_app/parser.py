@@ -40,6 +40,7 @@ def upload_file():
         if(request.args.getlist('delta')):
             deltas = request.args.getlist('delta')
             for delta in deltas:
+                delta = int(delta)
                 delta_list.append(delta)
 
         # Next, process the file with PaWrangler and print to 'files/pa_deficits/'
@@ -54,6 +55,7 @@ def upload_file():
         else:
             delta_list = sorted(delta_list, reverse=True)
             for delta in delta_list:
+                print(delta)
                 data.day_count = delta
                 file_name = data.print_to_file()
                 file_names.append(file_name)
